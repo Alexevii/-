@@ -9,3 +9,5 @@
 * **R** - сбросить
 * **H** - убрать UI
 * **дважды H** - убрать UI и FPS
+
+Скачать .exe для Windows можно с [itch.io](https://alexevi.itch.io/magic-attractor)
