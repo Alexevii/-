@@ -98,7 +98,16 @@ class Slider:
         return min(max(((self.p2[0] - cord[0]) * b2[1] + (self.p2[1] - cord[1]) * b1[1]) / dist + 1, 0), 1) * (self.max_value - self.min_value) + self.min_value
 
 def main():
+    global WIDTH
+    global HEIGHT
+
     pygame.init()
+    pygame.display.init()
+
+    sizes = pygame.display.get_desktop_sizes()[0]
+    WIDTH = sizes[0]
+    HEIGHT = sizes[1]
+
     src_surface = pygame.display.set_mode((WIDTH, HEIGHT))
     drw_surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
     font = pygame.font.Font(None, 48)
@@ -318,8 +327,5 @@ def get_third_vector(p1: Point, p2: Point) -> Point:
     return Point(p1.y * p2.z - p2.y * p1.z,
                  p1.z * p2.x - p2.z * p1.x,
                  p1.x * p2.y - p2.x * p1.y)
-
-WIDTH = 1920
-HEIGHT = 1080
 
 main()
